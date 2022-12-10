@@ -250,29 +250,43 @@ def word_output(input_brand, food_choices):
     if food_choices is None:
         food_choices = list(filtered_df_item['item_name'][0])
     filtered_df = filtered_df_item[filtered_df_item['item_name'].isin(food_choices)]
-    calorie_total = str(sum(filtered_df["nf_calories"]))+"g"
+    calorie_total = str(round(sum(filtered_df["nf_calories"]), 2))+"g"
     calorie_dv = str(round((sum(filtered_df["nf_calories"])/2000.0)*100))+"%"
-    fat_total = str(sum(filtered_df["nf_total_fat"]))+"g"
+    fat_total = str(round(sum(filtered_df["nf_total_fat"]), 2))+"g"
     fat_dv = str(round((sum(filtered_df["nf_total_fat"])/78.0)*100))+"%"
-    satfat_total = str(sum(filtered_df["nf_saturated_fat"]))+"g"
+    satfat_total = str(round(sum(filtered_df["nf_saturated_fat"]), 2))+"g"
     satfat_dv = str(round((sum(filtered_df["nf_saturated_fat"])/20.0)*100))+"%"
-    tranfat_total = str(sum(filtered_df["nf_trans_fatty_acid"]))+"g"
-    chol_total = str(sum(filtered_df["nf_cholesterol"]))+"mg"
+    tranfat_total = str(round(sum(filtered_df["nf_trans_fatty_acid"]), 2))+"g"
+    chol_total = str(round(sum(filtered_df["nf_cholesterol"]), 2))+"mg"
     chol_dv = str(round((sum(filtered_df["nf_cholesterol"])/300.0)*100))+"%"
-    sodium_total = str(sum(filtered_df["nf_sodium"]))+"mg"
+    sodium_total = str(round(sum(filtered_df["nf_sodium"]), 2))+"mg"
     sodium_dv = str(round((sum(filtered_df["nf_sodium"])/2300.0)*100))+"%"
-    carb_total = str(sum(filtered_df["nf_total_carbohydrate"]))+"g"
+    carb_total = str(round(sum(filtered_df["nf_total_carbohydrate"]), 2))+"g"
     carb_dv = str(round((sum(filtered_df["nf_total_carbohydrate"])/275.0)*100))+"%"
-    fiber_total = str(sum(filtered_df["nf_dietary_fiber"]))+"g"
+    fiber_total = str(round(sum(filtered_df["nf_dietary_fiber"]), 2))+"g"
     fiber_dv = str(round((sum(filtered_df["nf_dietary_fiber"])/28.0)*100))+"%"
-    sugar_total = str(sum(filtered_df["nf_sugars"]))+"g"
-    protein_total = str(sum(filtered_df["nf_protein"]))+"g"
+    sugar_total = str(round(sum(filtered_df["nf_sugars"]), 2))+"g"
+    protein_total = str(round(sum(filtered_df["nf_protein"]), 2))+"g"
     protein_dv = str(round((sum(filtered_df["nf_protein"])/50.0)*100))+"%"
 
     vitamin_a_dv = str(sum(filtered_df["nf_vitamin_a_dv"]))+"%"
     vitamin_c_dv = str(sum(filtered_df["nf_vitamin_c_dv"]))+"%"
     calcium_dv = str(sum(filtered_df["nf_calcium_dv"]))+"%"
     iron_dv = str(sum(filtered_df["nf_iron_dv"]))+"%"
+
+    if vitamin_a_dv == "nan%":
+        vitamin_a_dv = "Data not avaliable"
+    if vitamin_c_dv == "nan%":
+        vitamin_c_dv = "Data not avaliable"
+    if calcium_dv == "nan%":
+        calcium_dv = "Data not avaliable"    
+    if iron_dv == "nan%":
+        iron_dv = "Data not avaliable"
+
+    for val in [vitamin_a_dv, vitamin_c_dv, calcium_dv, iron_dv]:
+        if val == "nan%":
+            val = "Data not avaliable"
+    
 
     return calorie_total, calorie_dv, fat_total, fat_dv, satfat_total, satfat_dv, tranfat_total, chol_total, chol_dv, sodium_total, sodium_dv, carb_total, carb_dv, fiber_total, fiber_dv, sugar_total, protein_total, protein_dv, vitamin_a_dv, vitamin_c_dv, calcium_dv, iron_dv
 
@@ -301,11 +315,14 @@ def update_graph(input_brand, input_feature, food_choices):
     filtered_df_item = df[df["brand_name"] == input_brand]
     if food_choices is None:
         food_choices = list(filtered_df_item['item_name'][0])
-    
+        
     filtered_df = filtered_df_item[filtered_df_item['item_name'].isin(food_choices)]
 
     if input_feature == "Calories":
-        fig = px.bar(filtered_df, x = "item_name", y="nf_calories")
+        fig = px.bar(filtered_df, x = "item_name", y="nf_calories", labels={
+            "nf_calories" : "Calories",
+            "item_name" : "Item"
+        })
 
     elif input_feature == "Nutrients":
         fig = px.bar(filtered_df, x = "item_name", y = ["nf_total_fat", "nf_total_carbohydrate", "nf_protein"], barmode="group", labels={
@@ -355,29 +372,38 @@ def word_output(input_brand, food_choices):
     if food_choices is None:
         food_choices = list(filtered_df_item['item_name'][0])
     filtered_df = filtered_df_item[filtered_df_item['item_name'].isin(food_choices)]
-    calorie_total = str(sum(filtered_df["nf_calories"]))+"g"
+    calorie_total = str(round(sum(filtered_df["nf_calories"]), 2))+"g"
     calorie_dv = str(round((sum(filtered_df["nf_calories"])/2000.0)*100))+"%"
-    fat_total = str(sum(filtered_df["nf_total_fat"]))+"g"
+    fat_total = str(round(sum(filtered_df["nf_total_fat"]), 2))+"g"
     fat_dv = str(round((sum(filtered_df["nf_total_fat"])/78.0)*100))+"%"
-    satfat_total = str(sum(filtered_df["nf_saturated_fat"]))+"g"
+    satfat_total = str(round(sum(filtered_df["nf_saturated_fat"]), 2))+"g"
     satfat_dv = str(round((sum(filtered_df["nf_saturated_fat"])/20.0)*100))+"%"
-    tranfat_total = str(sum(filtered_df["nf_trans_fatty_acid"]))+"g"
-    chol_total = str(sum(filtered_df["nf_cholesterol"]))+"mg"
+    tranfat_total = str(round(sum(filtered_df["nf_trans_fatty_acid"]), 2))+"g"
+    chol_total = str(round(sum(filtered_df["nf_cholesterol"]), 2))+"mg"
     chol_dv = str(round((sum(filtered_df["nf_cholesterol"])/300.0)*100))+"%"
-    sodium_total = str(sum(filtered_df["nf_sodium"]))+"mg"
+    sodium_total = str(round(sum(filtered_df["nf_sodium"]), 2))+"mg"
     sodium_dv = str(round((sum(filtered_df["nf_sodium"])/2300.0)*100))+"%"
-    carb_total = str(sum(filtered_df["nf_total_carbohydrate"]))+"g"
+    carb_total = str(round(sum(filtered_df["nf_total_carbohydrate"]), 2))+"g"
     carb_dv = str(round((sum(filtered_df["nf_total_carbohydrate"])/275.0)*100))+"%"
-    fiber_total = str(sum(filtered_df["nf_dietary_fiber"]))+"g"
+    fiber_total = str(round(sum(filtered_df["nf_dietary_fiber"]), 2))+"g"
     fiber_dv = str(round((sum(filtered_df["nf_dietary_fiber"])/28.0)*100))+"%"
-    sugar_total = str(sum(filtered_df["nf_sugars"]))+"g"
-    protein_total = str(sum(filtered_df["nf_protein"]))+"g"
+    sugar_total = str(round(sum(filtered_df["nf_sugars"]), 2))+"g"
+    protein_total = str(round(sum(filtered_df["nf_protein"]), 2))+"g"
     protein_dv = str(round((sum(filtered_df["nf_protein"])/50.0)*100))+"%"
 
     vitamin_a_dv = str(sum(filtered_df["nf_vitamin_a_dv"]))+"%"
     vitamin_c_dv = str(sum(filtered_df["nf_vitamin_c_dv"]))+"%"
     calcium_dv = str(sum(filtered_df["nf_calcium_dv"]))+"%"
     iron_dv = str(sum(filtered_df["nf_iron_dv"]))+"%"
+
+    if vitamin_a_dv == "nan%":
+        vitamin_a_dv = "Data not avaliable"
+    if vitamin_c_dv == "nan%":
+        vitamin_c_dv = "Data not avaliable"
+    if calcium_dv == "nan%":
+        calcium_dv = "Data not avaliable"    
+    if iron_dv == "nan%":
+        iron_dv = "Data not avaliable"
 
     return calorie_total, calorie_dv, fat_total, fat_dv, satfat_total, satfat_dv, tranfat_total, chol_total, chol_dv, sodium_total, sodium_dv, carb_total, carb_dv, fiber_total, fiber_dv, sugar_total, protein_total, protein_dv, vitamin_a_dv, vitamin_c_dv, calcium_dv, iron_dv
 
