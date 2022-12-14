@@ -1,0 +1,9 @@
+site_name: My Docs
+
+nav:
+  - About MKDocs: "index.md"
+  - Installing API: "installation.md"
+  - Getting Started: "getting-started.md"
+  - Examples: "examples.md"
+  - BDD-style Features: "bdd-style.md"
+  - Contributing: "contribution.md"

@@ -1,0 +1,5 @@
+dash
+pandas
+plotly.express
+dash_bootstrap_components
+nutritionix
