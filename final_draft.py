@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
 
-app = dash.Dash(external_stylesheets=[dbc.themes.CYBORG])
+app = dash.Dash(external_stylesheets=[dbc.themes.CERULEAN])
 
 df = pd.read_csv("https://raw.githubusercontent.com/eleanorb96/cse314_group-project/bhoshaw/all_restaurant_data.csv")
 
