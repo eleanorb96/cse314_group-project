@@ -169,7 +169,7 @@ def update_comparison(brand1, items1, brand2, items2):
     if prodif < 0:
         procol = "green"
     
-    fig = px.bar(x = ["Calorie Difference", "Calories from Fat Difference", "Calories from Carbs Difference", "Calories from Protein Difference"], y = [caldif, fatdif, carbdif, prodif], title="Nutrion Differences (Meal 1 - Meal 2)", labels={"x":"Nutrition Statistic", "y":"Difference"})
+    fig = px.bar(x = ["Calorie Difference", "Calories from Fat Difference", "Calories from Carbs Difference", "Calories from Protein Difference"], y = [caldif, fatdif, carbdif, prodif], title="Nutrition Differences (Meal 1 - Meal 2)", labels={"x":"Nutrition Statistic", "y":"Difference"})
     fig.update_traces(marker_color=[calcol, fatcol, carbcol, procol])
 
     return fig
