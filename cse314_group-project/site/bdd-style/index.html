@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>BDD-style Features - My Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">About MKDocs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../installation/" class="nav-link">Installing API</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../getting-started/" class="nav-link">Getting Started</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../examples/" class="nav-link">Examples</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">BDD-style Features</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../contribution/" class="nav-link">Contributing</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../examples/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../contribution/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#bdd-style-feature-docs" class="nav-link">BDD-style feature docs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#title-gathering-nutrition-data-for-analysis" class="nav-link">Title: Gathering nutrition data for analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#title-data-cleaningnormalization" class="nav-link">Title: Data Cleaning/Normalization</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#title-understanding-nutrition-trends-at-fast-food-restaurants-data-aggregation" class="nav-link">Title: Understanding Nutrition Trends at Fast Food Restaurants (Data Aggregation)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#title-data-visualizationdashboarding" class="nav-link">Title: Data Visualization/Dashboarding</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="bdd-style-feature-docs">BDD-style feature docs</h1>
+<h2 id="title-gathering-nutrition-data-for-analysis">Title: Gathering nutrition data for analysis</h2>
+<h3 id="narrative">Narrative:</h3>
+<ul>
+<li>As a: Data Scientist interested in researching the differences in nutrition facts between different restaurants and also interested in understand the predictive ability of various food attributions on the number of calories in a product</li>
+<li>I want: Up-to-date data from trusted sources</li>
+<li>So that: I can perform the analysis and feel confident in my findings.</li>
+</ul>
+<h3 id="scenario-1-preparing-the-data-for-analysis">Scenario 1: Preparing the Data for Analysis</h3>
+<ul>
+<li>Given: Interest in understanding how food characteristics affect the calories count present in a specific fast food product</li>
+<li>And: I know potential sources to retrieve the data from</li>
+<li>When: The data is called for and collected</li>
+<li>Then: I can begin cleaning the data and working through the data science process.</li>
+</ul>
+<h3 id="scenario-2-updating-the-foods-present-in-my-database">Scenario 2: Updating the Foods Present in my Database</h3>
+<ul>
+<li>Given: Interest in collecting nutrition data on fast food products</li>
+<li>And: I have an understanding of how to use the USDA’s FoodData Central API and NurtirionIX API</li>
+<li>When: I want to collect and update the data</li>
+<li>Then: The API will quickly provide me with new products that have been added to their database that I can incorporate into my analysis.</li>
+</ul>
+<h2 id="title-data-cleaningnormalization">Title: Data Cleaning/Normalization</h2>
+<h3 id="narrative_1">Narrative:</h3>
+<ul>
+<li>As a: Data scientist attempting to prepare the collected API data for analysis</li>
+<li>I want: The data to be cleaned/normalized in a fashion that easily allows me to select products based on brand and name</li>
+<li>So that: The data is immediately consistent and easy to work with.</li>
+</ul>
+<h3 id="scenario-1-preparing-the-nutritionix-api-raw-data">Scenario 1: Preparing the NutritionIX API Raw Data</h3>
+<ul>
+<li>Given: Data from the NurtitionIX API based on a specific query such as a brand name (restaurant name)</li>
+<li>And: An interest in selecting specific restaurants and specific foods</li>
+<li>When: Data cleaning/normalization techniques are applied</li>
+<li>Then: I can easily retrieve information about my requested item in a timely fashion and in a clean and consistent manner.</li>
+</ul>
+<h2 id="title-understanding-nutrition-trends-at-fast-food-restaurants-data-aggregation">Title: Understanding Nutrition Trends at Fast Food Restaurants (Data Aggregation)</h2>
+<h3 id="narrative_2">Narrative:</h3>
+<ul>
+<li>As a: Nutritionist interested in understanding nutrition trends of a particular type of product or restaurant</li>
+<li>I want: Aggregated data</li>
+<li>So that: I can gain an understanding of the nutritional value of a particular restaurant or product type.</li>
+</ul>
+<h3 id="scenario-1-understanding-a-restaurants-nutritional-value">Scenario 1: Understanding a Restaurant’s Nutritional Value</h3>
+<ul>
+<li>Given: Food data from a particular restaurant</li>
+<li>And: The ability to aggregate the data based on food type (burger, drink, etc.)</li>
+<li>When: I call for a particular statistic</li>
+<li>Then: I will gain an understanding of the average nutritional value of that food type at the restaurant.</li>
+</ul>
+<h2 id="title-data-visualizationdashboarding">Title: Data Visualization/Dashboarding</h2>
+<h3 id="narrative_3">Narrative:</h3>
+<ul>
+<li>As a: Data scientist looking to visualize and compare the nutrition facts of restaurants and particular products</li>
+<li>I want: The ability to select the restaurants/products displayed and the specific statistics requested in a side-by-side manner</li>
+<li>So that: I can accurately make a visual comparison between two restaurant/products.</li>
+</ul>
+<h3 id="scenario-1-create-comparisons-between-individual-products-at-two-restuarants">Scenario 1: Create Comparisons Between Individual Products at Two Restuarants</h3>
+<ul>
+<li>Given: A dashboard with the capability to select two restaurants</li>
+<li>And: The ability to select specific attributes about each restaurant (average calories, average fats, etc.)</li>
+<li>And: The Dashboard is configured to provide me with a side-by-side display of the requested features</li>
+<li>When: I make my selection</li>
+<li>Then: I will receive an easy to read and analyze visual display that is conducive to understanding more about each product and how they compare.</li>
+<li>For Example: Nutrition Facts about a cheeseburger from McDonalds and a cheeseburger from Burger King.</li>
+</ul>
+<h3 id="scenario-2-create-comparisons-between-two-products-at-a-given-restaurant">Scenario 2: Create Comparisons Between Two Products at a Given Restaurant</h3>
+<ul>
+<li>Given: A dashboard with the capability to select multiple products from one restaurant</li>
+<li>And: The ability to select specific nutrition facts</li>
+<li>And: The Dashboard is configured to provide me with a side-by-side display of the requested items</li>
+<li>When: I make my food selections</li>
+<li>Then: I will receive an easy to read and analyze visual display that is conducive to understanding more about each product and how they compare.</li>
+<li>For Example: Nutrition Facts about a cheeseburger and double cheeseburger from McDonalds.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
