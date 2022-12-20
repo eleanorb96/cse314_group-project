@@ -7,7 +7,7 @@ import dash_bootstrap_components as dbc
 app = dash.Dash(external_stylesheets=[dbc.themes.CERULEAN])
 
 df = pd.read_csv(
-    "https://raw.githubusercontent.com/eleanorb96/cse314_group-project/all_restaurant_data.csv")
+    "https://raw.githubusercontent.com/eleanorb96/cse314_group-project/bhoshaw/all_restaurant_data.csv")
 
 # 'McDonalds', 'Subway', 'Taco Bell', 'Chick-Fil-A', 'Wendy\'s', 'Burger King', 'Domino\'s', 'Panera Bread', 'Pizza Hut', 'Chipotle'
 
