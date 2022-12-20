@@ -1,0 +1,3 @@
+[submodule "api-documentation"]
+	path = api-documentation
+	url = https://github.com/nutritionix/api-documentation.git
