@@ -1,5 +1,7 @@
 # Welcome to the Nutritionix CSE 314 Group API
 
+Welcome! Here you will learn all there is to know about this Nutritionix project.
+
 ## Project layout
 
     mkdocs.yml    # The configuration file.
